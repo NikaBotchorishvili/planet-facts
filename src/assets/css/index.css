@@ -17,7 +17,7 @@ header .header-container .header h1 {
   font-weight: 300;
 }
 header .header-container .navigation {
-  width: 40%;
+  width: 500px;
 }
 header .header-container .navigation .nav-links {
   list-style: none;
@@ -32,16 +32,21 @@ header .header-container .navigation .nav-links .nav-item a {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 768px) {
+  header .header-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 main {
   color: #ffffff;
   margin-top: 50px;
-  gap: 50px;
   width: 100%;
 }
 main .container {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   align-items: flex-start;
   gap: 40px;
@@ -59,24 +64,27 @@ main .container .planet-details-container .planet-details {
   flex-direction: column;
   gap: 20px;
 }
-main .container .planet-details-container .planet-details .planet-name {
+main .container .planet-details-container .planet-details .planet-about-container {
+  display: grid;
+}
+main .container .planet-details-container .planet-details .planet-about-container .planet-name {
   font-family: "Antonio", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 3.5rem;
+  font-size: 3.5em;
 }
-main .container .planet-details-container .planet-details .planet-about {
+main .container .planet-details-container .planet-details .planet-about-container .planet-about {
   font-family: "League Spartan", sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
 }
-main .container .planet-details-container .planet-details .planet-source {
+main .container .planet-details-container .planet-details .planet-about-container .planet-about .planet-source {
   display: flex;
   gap: 10px;
   color: #38384f;
 }
-main .container .planet-details-container .planet-details .planet-source a {
+main .container .planet-details-container .planet-details .planet-about-container .planet-about .planet-source a {
   color: #838391;
 }
 main .container .planet-details-container .planet-details .info-states-container {
@@ -120,19 +128,75 @@ main .container .planet-info-container .info-item .info-value {
   font-family: "Antonio", sans-serif;
 }
 
+@media only screen and (max-width: 1000px) {
+  main .container .planet-info-container {
+    gap: 10px;
+  }
+  main .container .planet-info-container .info-item .info-name {
+    color: #838391;
+    font-family: "League Spartan", sans-serif;
+    font-size: 0.8rem;
+  }
+  main .container .planet-info-container .info-item .info-value {
+    font-family: "Antonio", sans-serif;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main .container {
+    width: 95%;
+  }
+  main .container .planet-details-container .planet-details {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+  }
+  main .container .planet-details-container .planet-details .planet-about-container {
+    gap: 10px;
+  }
+  main .container .planet-details-container .planet-details .planet-about-container .planet-about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 200px;
+  }
+  main .container .planet-details-container .planet-details .planet-about-container .planet-about .planet-source {
+    font-size: 0.85rem;
+  }
+  main .container .planet-details-container .planet-details .info-states-container {
+    flex-basis: 130%;
+  }
+  main .container .planet-details-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  main .container .planet-info-container {
+    gap: 20px;
+  }
+  main .container .planet-info-container .info-item {
+    padding: 25px 20px 25px;
+  }
+  main .container .planet-info-container .info-item .info-name {
+    color: #838391;
+    font-family: "League Spartan", sans-serif;
+    font-size: 0.9rem;
+  }
+  main .container .planet-info-container .info-item .info-value {
+    font-family: "Antonio", sans-serif;
+  }
+}
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: black;
+  background-color: #070724;
 }
 body #root {
   content: "";
   background: url("/images/background-stars.svg");
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: sticky;
   z-index: 100;
 }/*# sourceMappingURL=index.css.map */

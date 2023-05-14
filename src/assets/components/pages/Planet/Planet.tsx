@@ -8,23 +8,32 @@ function Planet() {
 					</div>
 
 					<div className="planet-details">
-						<h1 className="planet-name">Mercury</h1>
+						<div className="planet-about-container">
+							<h1 className="planet-name">Mercury</h1>
 
-						<p className="planet-about">
-							Mercury is the smallest planet in the Solar System
-							and the closest to the Sun. Its orbit around the Sun
-							takes 87.97 Earth days, the shortest of all the
-							Sun's planets. Mercury is one of four terrestrial
-							planets in the Solar System, and is a rocky body
-							like Earth.
-						</p>
-						<small className="planet-source">
-							Source:{" "}
-							<a href="#">
-								Wikipedia{" "}
-								<img src="images/icon-source.svg" alt="" />
-							</a>
-						</small>
+							<div className="planet-about">
+								<p className="about">
+									Mercury is the smallest planet in the Solar
+									System and the closest to the Sun. Its orbit
+									around the Sun takes 87.97 Earth days, the
+									shortest of all the Sun's planets. Mercury
+									is one of four terrestrial planets in the
+									Solar System, and is a rocky body like
+									Earth.
+								</p>
+
+								<small className="planet-source">
+									Source:{" "}
+									<a href="#">
+										Wikipedia{" "}
+										<img
+											src="images/icon-source.svg"
+											alt=""
+										/>
+									</a>
+								</small>
+							</div>
+						</div>
 
 						<div className="info-states-container">
 							<ul className="info-states">

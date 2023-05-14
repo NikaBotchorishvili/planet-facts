@@ -3,12 +3,11 @@
 main {
 	color: $white;
 	margin-top: 50px;
-	gap: 50px;
 	width: 100%;
 	.container {
 		display: flex;
 		flex-direction: column;
-		width: 70%;
+		width: 80%;
 		margin: 0 auto;
 		align-items: flex-start;
 		gap: 40px;
@@ -24,28 +23,31 @@ main {
 				flex-basis: 250px;
 				flex-direction: column;
 				gap: 20px;
-				.planet-name {
-					font-family: $fontAntonio;
-					text-transform: uppercase;
-					font-weight: 400;
-					font-size: 3.5rem;
-				}
-
-				.planet-about {
-					font-family: $fontSpartan;
-					font-weight: 300;
-					font-size: 14px;
-					line-height: 25px;
-				}
-
-				.planet-source {
-					display: flex;
-					gap: 10px;
-					color: $payneGrey;
-					a {
-						color: $stack;
+				.planet-about-container{
+					display: grid;
+					.planet-name {
+						font-family: $fontAntonio;
+						text-transform: uppercase;
+						font-weight: 400;
+						font-size: 3.5em;
 					}
+	
+					.planet-about {
+						font-family: $fontSpartan;
+						font-weight: 300;
+						font-size: 14px;
+						line-height: 25px;
+						.planet-source {
+							display: flex;
+							gap: 10px;
+							color: $payneGrey;
+							a {
+								color: $stack;
+							}
+						}
+					}			
 				}
+		
 				.info-states-container {
 					font-family: $fontSpartan;
 					.info-states {
@@ -85,6 +87,77 @@ main {
 				}
 				.info-value {
 					font-family: $fontAntonio;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 1000px) {
+	main {
+		.container {
+			.planet-info-container {
+				gap: 10px;
+				.info-item {
+
+					.info-name {
+						color: $stack;
+						font-family: $fontSpartan;
+						font-size: 0.8rem;
+					}
+					.info-value {
+						font-family: $fontAntonio;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	main {
+		.container {
+			width: 95%;
+			.planet-details-container{
+				.planet-details{
+					flex-direction: row;
+					align-items: center;
+					gap:50px;
+					.planet-about-container{
+						gap: 10px;
+						.planet-about{
+							display: flex;
+							flex-direction: column;
+							gap: 20px;							
+							flex: 200px;
+							.planet-source{
+								font-size: 0.85rem;
+							}
+						}
+					}
+					.info-states-container{
+						flex-basis: 130%;
+						.info-state-item{
+
+						}
+					}
+				}
+			}
+			.planet-details-container {
+				flex-direction: column;
+				gap: 50px;
+			}
+			.planet-info-container {
+				gap: 20px;
+				.info-item {
+					padding: 25px 20px 25px;
+					.info-name {
+						color: $stack;
+						font-family: $fontSpartan;
+						font-size: 0.9rem;
+					}
+					.info-value {
+						font-family: $fontAntonio;
+					}
 				}
 			}
 		}

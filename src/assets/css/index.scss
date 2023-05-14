@@ -7,13 +7,13 @@
 }
 
 body{
-    background-color: black;
+    background-color: #070724;
     #root{
         content: "";
         background: url("/images/background-stars.svg");
         width: 100%;
         height: 100%;
-        position: fixed;
+        position: sticky;
         z-index: 100;
     }
 }
