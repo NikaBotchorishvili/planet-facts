@@ -1,6 +1,6 @@
 @forward "./abstracts/index.scss";
 @use "./partials/header";
-
+@use "./pages/planet.scss";
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@
 
 body{
     background-color: black;
-    &::before{
+    #root{
         content: "";
         background: url("/images/background-stars.svg");
         width: 100%;
