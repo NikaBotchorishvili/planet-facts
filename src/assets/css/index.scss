@@ -1,0 +1,19 @@
+@forward "./abstracts/index.scss";
+@use "./partials/header";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    &::before{
+        content: "";
+        background: url("/images/background-stars.svg");
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 100;
+    }
+}

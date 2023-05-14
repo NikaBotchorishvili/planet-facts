@@ -1,13 +1,17 @@
-import { useState } from 'react'
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Header from "./assets/components/Header";
 function App() {
-
-
-  return (
-    <>
-    
-    </>
-  )
+	const router = createBrowserRouter([
+        {
+            path: "/",
+            element: "",
+        }
+    ])
+    return (
+		<>
+			<Header />
+		</>
+	);
 }
 
-export default App
+export default App;
