@@ -11,6 +11,9 @@ main {
 		margin: 0 auto;
 		align-items: flex-start;
 		gap: 40px;
+		.info-states-container-mobile{
+			display: none;
+		}
 		.planet-details-container {
 			display: flex;
 			flex: auto 250px;
@@ -60,9 +63,29 @@ main {
 							display: flex;
 							justify-content: space-between;
 						}
-						.active {
-							background: $mercury;
-							border: none;
+						.mercury.active{
+							@include planetBackground($mercury)
+						}
+						.venus.active{
+							@include planetBackground($venus)
+						}
+						.earth.active{
+							@include planetBackground($earth)
+						}
+						.mars.active{
+							@include planetBackground($mars)
+						}
+						.jupiter.active{
+							@include planetBackground($jupiter)
+						}
+						.saturn.active{
+							@include planetBackground($saturn)
+						}
+						.uranus.active{
+							@include planetBackground($uranus)
+						}
+						.neptune.active{
+							@include planetBackground($neptune)
 						}
 					}
 				}
@@ -135,7 +158,108 @@ main {
 						}
 					}
 					.info-states-container{
-						flex-basis: 130%;
+						flex-basis: 200%;
+						.info-state-item{
+							font-size: 0.8rem;
+						}
+					}
+				}
+			}
+			.planet-details-container {
+				flex-direction: column;
+				gap: 50px;
+			}
+			.planet-info-container {
+				flex-direction: column;
+				gap: 20px;
+				.info-item {
+					padding: 25px 20px 25px;
+					box-sizing: border-box;
+					.info-name {
+						color: $stack;
+						font-family: $fontSpartan;
+						font-size: 0.8rem;
+					}
+					.info-value {
+						font-family: $fontAntonio;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 500px) {
+	main {
+		margin: 0;
+		.container {
+			width: 100%;
+			.info-states-container-mobile{
+				border: 1px solid $payneGrey;
+
+				width: 100%;
+				display: block;
+				box-sizing: border-box;
+				.info-states{
+					display: flex;
+					list-style-type: none;
+					justify-content: space-around;
+					.info-state-item{
+						display: flex;
+						padding: 20px 0;
+						font-size: 1em;
+						font-family: $fontSpartan;
+						cursor: pointer;
+					}
+					.mercury.active{
+						@include planetBorder($mercury)
+					}
+					.venus.active{
+						@include planetBorder($venus)
+					}
+					.earth.active{
+						@include planetBorder($earth)
+					}
+					.mars.active{
+						@include planetBorder($mars)
+					}
+					.jupiter.active{
+						@include planetBorder($jupiter)
+					}
+					.saturn.active{
+						@include planetBorder($saturn)
+					}
+					.uranus.active{
+						@include planetBorder($uranus)
+					}
+					.neptune.active{
+						@include planetBorder($neptune)
+					}
+				}
+			}
+			.planet-details-container{
+				width: 95%;
+				margin: 0 auto;
+				.planet-details{
+					flex-direction: row;
+					align-items: center;
+					gap:50px;
+					.planet-about-container{
+						gap: 10px;
+						.planet-about{
+							display: flex;
+							flex-direction: column;
+							gap: 20px;							
+							flex: 200px;
+							.planet-source{
+								font-size: 0.85rem;
+							}
+						}
+					}
+					.info-states-container{
+						display: none;
+						flex-basis: 200%;
 						.info-state-item{
 
 						}
@@ -147,13 +271,15 @@ main {
 				gap: 50px;
 			}
 			.planet-info-container {
+				flex-direction: column;
 				gap: 20px;
 				.info-item {
 					padding: 25px 20px 25px;
+					box-sizing: border-box;
 					.info-name {
 						color: $stack;
 						font-family: $fontSpartan;
-						font-size: 0.9rem;
+						font-size: 0.8rem;
 					}
 					.info-value {
 						font-family: $fontAntonio;

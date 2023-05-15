@@ -2,6 +2,19 @@ function Planet() {
 	return (
 		<main>
 			<div className="container">
+				<div className="info-states-container-mobile">
+					<ul className="info-states">
+						<li className="info-state-item mercury active">
+							<div className="">OVERVIEW</div>
+						</li>
+						<li className="info-state-item mercury">
+							<div>STRUCTURE</div>
+						</li>
+						<li className="info-state-item mercury">
+							<div>SURFACE</div>
+						</li>
+					</ul>
+				</div>
 				<section className="planet-details-container">
 					<div className="planet-image">
 						<img src="images/planet-mercury.svg" alt="" />
@@ -37,15 +50,15 @@ function Planet() {
 
 						<div className="info-states-container">
 							<ul className="info-states">
-								<li className="info-state-item active">
+								<li className="info-state-item mercury active">
 									<div>01</div>
 									<div>OVERVIEW</div>
 								</li>
-								<li className="info-state-item">
+								<li className="info-state-item mercury">
 									<div>02</div>
 									<div>INTERNAL STRUCTURE</div>
 								</li>
-								<li className="info-state-item">
+								<li className="info-state-item mercury">
 									<div>03</div>
 									<div>SURFACE GEOLOGY</div>
 								</li>

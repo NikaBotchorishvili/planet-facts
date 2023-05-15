@@ -33,6 +33,9 @@ function Header() {
 						</li>
 					</ul>
 				</nav>
+				<div className="menu-icon-container">
+					<img className="menu-icon" src="/images/icon-hamburger.svg" alt="" />
+				</div>
 			</div>
 		</header>
 	);

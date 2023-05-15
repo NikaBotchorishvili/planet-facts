@@ -4,14 +4,15 @@ header {
 	color: $white;
 	font-family: $fontAntonio;
 	width: 100%;
-    border-bottom: 0.5px solid $white;
-    padding-bottom: 20px;
+	border: 1px solid $payneGrey;
+	box-sizing: border-box;
+	padding-bottom: 20px;
 	.header-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 95%;
-        margin: 20px auto 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 95%;
+		margin: 20px auto 0 auto;
 		.header {
 			h1 {
 				font-weight: 300;
@@ -28,20 +29,44 @@ header {
 						font-family: $fontSpartan;
 						font-weight: 300;
 						color: $white;
-                        text-transform: uppercase;
+						text-transform: uppercase;
 						text-decoration: none;
 					}
 				}
 			}
 		}
+		.menu-icon-container {
+			display: none;
+		}
 	}
 }
 
-@media only screen and (max-width: 768px){
-	header{
-		.header-container{
+@media only screen and (max-width: 768px) {
+	header {
+		.header-container {
 			flex-direction: column;
 			gap: 20px;
+		}
+	}
+}
+
+@media only screen and (max-width: 520px) {
+	header {
+		.header-container {
+			flex-direction: row;
+			.header {
+				h1 {
+					width: max-content;
+				}
+			}
+			.navigation {
+				.nav-links {
+					display: none;
+				}
+			}
+			.menu-icon-container {
+				display: block;
+			}
 		}
 	}
 }

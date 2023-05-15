@@ -3,7 +3,8 @@ header {
   color: #ffffff;
   font-family: "Antonio", sans-serif;
   width: 100%;
-  border-bottom: 0.5px solid #ffffff;
+  border: 1px solid #38384f;
+  box-sizing: border-box;
   padding-bottom: 20px;
 }
 header .header-container {
@@ -31,11 +32,29 @@ header .header-container .navigation .nav-links .nav-item a {
   text-transform: uppercase;
   text-decoration: none;
 }
+header .header-container .menu-icon-container {
+  display: none;
+}
 
 @media only screen and (max-width: 768px) {
   header .header-container {
     flex-direction: column;
     gap: 20px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  header .header-container {
+    flex-direction: row;
+  }
+  header .header-container .header h1 {
+    width: -moz-max-content;
+    width: max-content;
+  }
+  header .header-container .navigation .nav-links {
+    display: none;
+  }
+  header .header-container .menu-icon-container {
+    display: block;
   }
 }
 main {
@@ -50,6 +69,9 @@ main .container {
   margin: 0 auto;
   align-items: flex-start;
   gap: 40px;
+}
+main .container .info-states-container-mobile {
+  display: none;
 }
 main .container .planet-details-container {
   display: flex;
@@ -101,9 +123,29 @@ main .container .planet-details-container .planet-details .info-states-container
   display: flex;
   justify-content: space-between;
 }
-main .container .planet-details-container .planet-details .info-states-container .info-states .active {
+main .container .planet-details-container .planet-details .info-states-container .info-states .mercury.active {
   background: #419EBB;
-  border: none;
+}
+main .container .planet-details-container .planet-details .info-states-container .info-states .venus.active {
+  background: #EDA249;
+}
+main .container .planet-details-container .planet-details .info-states-container .info-states .earth.active {
+  background: #6f2ed6;
+}
+main .container .planet-details-container .planet-details .info-states-container .info-states .mars.active {
+  background: #D14C32;
+}
+main .container .planet-details-container .planet-details .info-states-container .info-states .jupiter.active {
+  background: #D83A34;
+}
+main .container .planet-details-container .planet-details .info-states-container .info-states .saturn.active {
+  background: #CD5120;
+}
+main .container .planet-details-container .planet-details .info-states-container .info-states .uranus.active {
+  background: #1ec2a4;
+}
+main .container .planet-details-container .planet-details .info-states-container .info-states .neptune.active {
+  background: #2d68f0;
 }
 main .container .planet-info-container {
   display: flex;
@@ -163,22 +205,122 @@ main .container .planet-info-container .info-item .info-value {
     font-size: 0.85rem;
   }
   main .container .planet-details-container .planet-details .info-states-container {
-    flex-basis: 130%;
+    flex-basis: 200%;
+  }
+  main .container .planet-details-container .planet-details .info-states-container .info-state-item {
+    font-size: 0.8rem;
   }
   main .container .planet-details-container {
     flex-direction: column;
     gap: 50px;
   }
   main .container .planet-info-container {
+    flex-direction: column;
     gap: 20px;
   }
   main .container .planet-info-container .info-item {
     padding: 25px 20px 25px;
+    box-sizing: border-box;
   }
   main .container .planet-info-container .info-item .info-name {
     color: #838391;
     font-family: "League Spartan", sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+  }
+  main .container .planet-info-container .info-item .info-value {
+    font-family: "Antonio", sans-serif;
+  }
+}
+@media only screen and (max-width: 500px) {
+  main {
+    margin: 0;
+  }
+  main .container {
+    width: 100%;
+  }
+  main .container .info-states-container-mobile {
+    border: 1px solid #38384f;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+  }
+  main .container .info-states-container-mobile .info-states {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+  }
+  main .container .info-states-container-mobile .info-states .info-state-item {
+    display: flex;
+    padding: 20px 0;
+    font-size: 1em;
+    font-family: "League Spartan", sans-serif;
+    cursor: pointer;
+  }
+  main .container .info-states-container-mobile .info-states .mercury.active {
+    border-bottom: 3px solid #419EBB;
+  }
+  main .container .info-states-container-mobile .info-states .venus.active {
+    border-bottom: 3px solid #EDA249;
+  }
+  main .container .info-states-container-mobile .info-states .earth.active {
+    border-bottom: 3px solid #6f2ed6;
+  }
+  main .container .info-states-container-mobile .info-states .mars.active {
+    border-bottom: 3px solid #D14C32;
+  }
+  main .container .info-states-container-mobile .info-states .jupiter.active {
+    border-bottom: 3px solid #D83A34;
+  }
+  main .container .info-states-container-mobile .info-states .saturn.active {
+    border-bottom: 3px solid #CD5120;
+  }
+  main .container .info-states-container-mobile .info-states .uranus.active {
+    border-bottom: 3px solid #1ec2a4;
+  }
+  main .container .info-states-container-mobile .info-states .neptune.active {
+    border-bottom: 3px solid #2d68f0;
+  }
+  main .container .planet-details-container {
+    width: 95%;
+    margin: 0 auto;
+  }
+  main .container .planet-details-container .planet-details {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+  }
+  main .container .planet-details-container .planet-details .planet-about-container {
+    gap: 10px;
+  }
+  main .container .planet-details-container .planet-details .planet-about-container .planet-about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 200px;
+  }
+  main .container .planet-details-container .planet-details .planet-about-container .planet-about .planet-source {
+    font-size: 0.85rem;
+  }
+  main .container .planet-details-container .planet-details .info-states-container {
+    display: none;
+    flex-basis: 200%;
+  }
+  main .container .planet-details-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  main .container .planet-info-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  main .container .planet-info-container .info-item {
+    padding: 25px 20px 25px;
+    box-sizing: border-box;
+  }
+  main .container .planet-info-container .info-item .info-name {
+    color: #838391;
+    font-family: "League Spartan", sans-serif;
+    font-size: 0.8rem;
   }
   main .container .planet-info-container .info-item .info-value {
     font-family: "Antonio", sans-serif;

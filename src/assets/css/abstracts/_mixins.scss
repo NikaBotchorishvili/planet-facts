@@ -1,0 +1,7 @@
+@mixin planetBorder($color){
+    border-bottom: 3px solid $color;
+}
+
+@mixin planetBackground($color){
+    background: $color;
+}
