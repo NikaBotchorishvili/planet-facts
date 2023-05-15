@@ -1,4 +1,11 @@
+import { useContext } from "react"
+import { useParams } from "react-router-dom";
+import { dataContext } from "../../context/Context";
 function Planet() {
+
+	let { planet } = useParams()
+	
+	console.log(planet)
 	return (
 		<main>
 			<div className="container">
@@ -17,7 +24,7 @@ function Planet() {
 				</div>
 				<section className="planet-details-container">
 					<div className="planet-image">
-						<img src="images/planet-mercury.svg" alt="" />
+						<img src="/images/planet-mercury.svg" alt="" />
 					</div>
 
 					<div className="planet-details">

@@ -1,19 +1,23 @@
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ContextProvider } from "./assets/components/context/Context";
 import Header from "./assets/components/Header";
 import Planet from "./assets/components/pages/Planet/Planet";
 function App() {
-
-	// const router = createBrowserRouter([
-    //     {
-    //         path: "/",
-    //         element: "",
-    //     }
-    // ])
-    return (
+	const router = createBrowserRouter([
+		{
+			path: "/",
+            element: <Header />,
+            children: [
+                {
+                    element: <Planet />,
+                    path: "planet/:planet_name",
+                }
+            ]
+		},
+	]);
+	return (
 		<ContextProvider>
-			<Header />
-            <Planet />
+			<RouterProvider router={router} />
 		</ContextProvider>
 	);
 }
