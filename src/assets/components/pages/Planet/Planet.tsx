@@ -38,7 +38,7 @@ export const defaultPlanetLoader = () => {
 };
 
 function Planet() {
-	const planetData: Planet = useLoaderData();
+	const planetData = useLoaderData() as Planet;
 	const loc = useLocation();
 	let info_type = loc.pathname.split("/")[2];
 
