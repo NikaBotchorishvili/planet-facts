@@ -4,10 +4,18 @@ import Header from "./assets/components/Header";
 import Planet, {
 	planetLoader,
 } from "./assets/components/pages/Planet/Planet";
+import Redirect from "./assets/components/pages/Redirect";
 function App() {
+
+
 	const router = createBrowserRouter([
 		{
-			element: 
+			path: "/",
+			element: <Redirect />,
+			
+		},
+		{
+			element:
 			<>
 				<Header />
 				<Planet />

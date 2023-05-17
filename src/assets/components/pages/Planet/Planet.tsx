@@ -1,4 +1,4 @@
-import { useLoaderData, NavLink, useLocation } from "react-router-dom";
+import { useLoaderData, NavLink, useLocation, redirect } from "react-router-dom";
 export interface Planet {
 	name: string;
 	className: string;
@@ -12,6 +12,10 @@ export interface Planet {
 	images: { planet: string; internal: string; geology: string };
 }
 export const planetLoader = ({ params }: any) => {
+	if(params.planet_name){
+		redirect("/mercury/overview/")
+
+	}
 	let planetData = fetch("/data.json")
 		.then((res) => res.json())
 		.then((jsonData: Planet[]) =>

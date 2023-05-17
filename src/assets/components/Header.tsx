@@ -35,25 +35,25 @@ function Header() {
 							</Link>
 							<Link
 								className="nav-item jupiter"
-								to={"jupiter/overview/"}
+								to={"/jupiter/overview/"}
 							>
 								Jupiter
 							</Link>
 							<Link
 								className="nav-item saturn"
-								to={"saturn/overview/"}
+								to={"/saturn/overview/"}
 							>
 								Saturn
 							</Link>
 							<Link
 								className="nav-item uranus"
-								to={"uranus/overview/"}
+								to={"/uranus/overview/"}
 							>
 								Uranus
 							</Link>
 							<Link
 								className="nav-item neptune"
-								to={"neptune/overview/"}
+								to={"/neptune/overview/"}
 							>
 								Neptune
 							</Link>
