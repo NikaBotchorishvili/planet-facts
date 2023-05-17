@@ -10,28 +10,28 @@ function Header() {
 					<nav className="navigation">
 						<ul className="nav-links">
 							<li className="nav-item">
-								<Link to={"planet/mercury"}>Mercury</Link>
+								<Link to={"mercury/overview/"}>Mercury</Link>
 							</li>
 							<li className="nav-item">
-								<Link to={"planet/venus"}>Venus</Link>
+								<Link to={"venus/overview/"}>Venus</Link>
 							</li>
 							<li className="nav-item">
-								<Link to={"planet/earth"}>Earth</Link>
+								<Link to={"earth/overview/"}>Earth</Link>
 							</li>
 							<li className="nav-item">
-								<Link to={"planet/mars"}>Mars</Link>
+								<Link to={"mars/overview/"}>Mars</Link>
 							</li>
 							<li className="nav-item">
-								<Link to={"planet/jupiter"}>Jupiter</Link>
+								<Link to={"jupiter/overview/"}>Jupiter</Link>
 							</li>
 							<li className="nav-item">
-								<Link to={"planet/saturn"}>Saturn</Link>
+								<Link to={"saturn/overview/"}>Saturn</Link>
 							</li>
 							<li className="nav-item">
-								<Link to={"planet/uranus"}>Uranus</Link>
+								<Link to={"uranus/overview/"}>Uranus</Link>
 							</li>
 							<li className="nav-item">
-								<Link to={"planet/neptune"}>Neptune</Link>
+								<Link to={"neptune/overview/"}>Neptune</Link>
 							</li>
 						</ul>
 					</nav>

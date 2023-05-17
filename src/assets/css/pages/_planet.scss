@@ -21,6 +21,22 @@ main {
 			justify-content: space-between;
 			align-items: center;
 
+			.planet-image{
+				.image{
+					max-width: 350px;
+
+				}
+			}
+			.geology-image-container{
+				position: relative;
+				.geology-image{
+					position: absolute;
+					bottom: -10%;
+					width: 100px;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
 			.planet-details {
 				display: flex;
 				flex-basis: 250px;
@@ -57,11 +73,13 @@ main {
 						display: grid;
 						gap: 20px;
 						.info-state-item {
+							color: $white;
 							cursor: pointer;
 							border: 1px solid $payneGrey;
 							padding: 10px 20px;
 							display: flex;
 							justify-content: space-between;
+							text-decoration: none;
 						}
 						.mercury.active{
 							@include planetBackground($mercury)

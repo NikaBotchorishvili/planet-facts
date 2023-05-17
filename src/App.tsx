@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ContextProvider } from "./assets/components/context/Context";
+
 import Header from "./assets/components/Header";
-import Planet from "./assets/components/pages/Planet/Planet";
+import Planet, { planetLoader } from "./assets/components/pages/Planet/Planet";
 function App() {
 	const router = createBrowserRouter([
 		{
@@ -10,15 +10,14 @@ function App() {
             children: [
                 {
                     element: <Planet />,
-                    path: "planet/:planet_name",
+                    path: "/:planet_name/:info_type/",
+					loader: planetLoader
                 }
             ]
 		},
 	]);
 	return (
-		<ContextProvider>
-			<RouterProvider router={router} />
-		</ContextProvider>
+		<RouterProvider router={router}  />
 	);
 }
 

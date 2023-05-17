@@ -1,11 +1,59 @@
-import { useContext } from "react"
-import { useParams } from "react-router-dom";
-import { dataContext } from "../../context/Context";
-function Planet() {
+import { useLoaderData, NavLink, useLocation } from "react-router-dom";
+export interface Planet {
+	name: string;
+	className: string;
+	overview: { content: string; source: string };
+	structure: { content: string; source: string };
+	geology: { content: string; source: string };
+	rotation: string;
+	revolution: string;
+	radius: string;
+	temperature: string;
+	images: { planet: string; internal: string; geology: string };
+}
+export const planetLoader = ({ params }: any) => {
+	let planetData = fetch("/data.json")
+		.then((res) => res.json())
+		.then((jsonData: Planet[]) =>
+			jsonData.find(
+				(planet) =>
+					planet.name.toLowerCase() ==
+					params.planet_name?.toLowerCase()
+			)
+		)
+		.catch((error) => console.log(error));
 
-	let { planet } = useParams()
-	
-	console.log(planet)
+	return planetData;
+};
+
+function Planet() {
+	const planetData: Planet = useLoaderData();
+	const loc = useLocation();
+	let info_type = loc.pathname.split("/")[2];
+
+	let imageSection;
+
+	if (info_type == "overview") {
+		imageSection = (
+			<div className="planet-image">
+				<img className="image" src={planetData.images.planet} alt="" />
+			</div>
+		);
+	} else if (info_type == "internal") {
+		imageSection = (
+			<div className="planet-image">
+				<img className="image" src={planetData.images.internal} alt="" />
+			</div>
+		);
+	} else if (info_type == "surface") {
+		imageSection = (
+			<div className="planet-image geology-image-container ">
+				<img className="image" src={planetData.images.planet} alt="" />
+				<img className="geology-image" src={planetData.images.geology} alt="" />
+			</div>
+		);
+	}
+
 	return (
 		<main>
 			<div className="container">
@@ -14,7 +62,9 @@ function Planet() {
 						<li className="info-state-item mercury active">
 							<div className="">OVERVIEW</div>
 						</li>
-						<li className="info-state-item mercury">
+						<li
+							className={`info-state-item ${planetData.className}`}
+						>
 							<div>STRUCTURE</div>
 						</li>
 						<li className="info-state-item mercury">
@@ -23,31 +73,26 @@ function Planet() {
 					</ul>
 				</div>
 				<section className="planet-details-container">
-					<div className="planet-image">
-						<img src="/images/planet-mercury.svg" alt="" />
-					</div>
+					{imageSection}
 
 					<div className="planet-details">
 						<div className="planet-about-container">
-							<h1 className="planet-name">Mercury</h1>
+							<h1 className="planet-name">{planetData.name}</h1>
 
 							<div className="planet-about">
 								<p className="about">
-									Mercury is the smallest planet in the Solar
-									System and the closest to the Sun. Its orbit
-									around the Sun takes 87.97 Earth days, the
-									shortest of all the Sun's planets. Mercury
-									is one of four terrestrial planets in the
-									Solar System, and is a rocky body like
-									Earth.
+									{planetData.overview.content}
 								</p>
 
 								<small className="planet-source">
 									Source:{" "}
-									<a href="#">
+									<a
+										href={planetData.overview.source}
+										target="_blank"
+									>
 										Wikipedia{" "}
 										<img
-											src="images/icon-source.svg"
+											src="/images/icon-source.svg"
 											alt=""
 										/>
 									</a>
@@ -57,18 +102,27 @@ function Planet() {
 
 						<div className="info-states-container">
 							<ul className="info-states">
-								<li className="info-state-item mercury active">
+								<NavLink
+									to={`/${planetData.name.toLowerCase()}/overview/`}
+									className={`info-state-item ${planetData.className}`}
+								>
 									<div>01</div>
 									<div>OVERVIEW</div>
-								</li>
-								<li className="info-state-item mercury">
+								</NavLink>
+								<NavLink
+									to={`/${planetData.name.toLowerCase()}/internal/`}
+									className={`info-state-item ${planetData.className}`}
+								>
 									<div>02</div>
 									<div>INTERNAL STRUCTURE</div>
-								</li>
-								<li className="info-state-item mercury">
+								</NavLink>
+								<NavLink
+									to={`/${planetData.name.toLowerCase()}/surface/`}
+									className={`info-state-item ${planetData.className}`}
+								>
 									<div>03</div>
 									<div>SURFACE GEOLOGY</div>
-								</li>
+								</NavLink>
 							</ul>
 						</div>
 					</div>
@@ -77,19 +131,19 @@ function Planet() {
 				<section className="planet-info-container">
 					<div className="info-item">
 						<span className="info-name">ROTATION TIME</span>
-						<h2 className="info-value">58.6 DAYS</h2>
+						<h2 className="info-value">{planetData.rotation}</h2>
 					</div>
 					<div className="info-item">
 						<span className="info-name">REVOLUTION TIME</span>
-						<h2 className="info-value">87.97 DAYS</h2>
+						<h2 className="info-value">{planetData.revolution}</h2>
 					</div>
 					<div className="info-item">
 						<span className="info-name">RADIUS</span>
-						<h2 className="info-value">2,439.7 KM</h2>
+						<h2 className="info-value">{planetData.radius}</h2>
 					</div>
 					<div className="info-item">
 						<span className="info-name">AVERAGE TEMP.</span>
-						<h2 className="info-value">430°C</h2>
+						<h2 className="info-value">{planetData.temperature}</h2>
 					</div>
 				</section>
 			</div>

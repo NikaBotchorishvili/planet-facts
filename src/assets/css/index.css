@@ -80,6 +80,19 @@ main .container .planet-details-container {
   justify-content: space-between;
   align-items: center;
 }
+main .container .planet-details-container .planet-image .image {
+  max-width: 350px;
+}
+main .container .planet-details-container .geology-image-container {
+  position: relative;
+}
+main .container .planet-details-container .geology-image-container .geology-image {
+  position: absolute;
+  bottom: -10%;
+  width: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 main .container .planet-details-container .planet-details {
   display: flex;
   flex-basis: 250px;
@@ -117,11 +130,13 @@ main .container .planet-details-container .planet-details .info-states-container
   gap: 20px;
 }
 main .container .planet-details-container .planet-details .info-states-container .info-states .info-state-item {
+  color: #ffffff;
   cursor: pointer;
   border: 1px solid #38384f;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
 }
 main .container .planet-details-container .planet-details .info-states-container .info-states .mercury.active {
   background: #419EBB;
