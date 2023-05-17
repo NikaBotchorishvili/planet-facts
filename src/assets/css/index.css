@@ -25,14 +25,39 @@ header .header-container .navigation .nav-links {
   display: flex;
   justify-content: space-between;
 }
-header .header-container .navigation .nav-links .nav-item a {
+header .header-container .navigation .nav-links .nav-item {
   font-family: "League Spartan", sans-serif;
   font-weight: 300;
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
+  height: 100%;
 }
-header .header-container .menu-icon-container {
+header .header-container .navigation .nav-links .mercury:hover {
+  border-bottom: 1px solid #419ebb;
+}
+header .header-container .navigation .nav-links .venus:hover {
+  border-bottom: 1px solid #eda249;
+}
+header .header-container .navigation .nav-links .earth:hover {
+  border-bottom: 1px solid #6f2ed6;
+}
+header .header-container .navigation .nav-links .mars:hover {
+  border-bottom: 1px solid #d14c32;
+}
+header .header-container .navigation .nav-links .jupiter:hover {
+  border-bottom: 1px solid #d83a34;
+}
+header .header-container .navigation .nav-links .saturn:hover {
+  border-bottom: 1px solid #cd5120;
+}
+header .header-container .navigation .nav-links .uranus:hover {
+  border-bottom: 1px solid #1ec2a4;
+}
+header .header-container .navigation .nav-links .neptune:hover {
+  border-bottom: 1px solid #2d68f0;
+}
+header .menu-icon-container {
   display: none;
 }
 
@@ -139,22 +164,22 @@ main .container .planet-details-container .planet-details .info-states-container
   text-decoration: none;
 }
 main .container .planet-details-container .planet-details .info-states-container .info-states .mercury.active {
-  background: #419EBB;
+  background: #419ebb;
 }
 main .container .planet-details-container .planet-details .info-states-container .info-states .venus.active {
-  background: #EDA249;
+  background: #eda249;
 }
 main .container .planet-details-container .planet-details .info-states-container .info-states .earth.active {
   background: #6f2ed6;
 }
 main .container .planet-details-container .planet-details .info-states-container .info-states .mars.active {
-  background: #D14C32;
+  background: #d14c32;
 }
 main .container .planet-details-container .planet-details .info-states-container .info-states .jupiter.active {
-  background: #D83A34;
+  background: #d83a34;
 }
 main .container .planet-details-container .planet-details .info-states-container .info-states .saturn.active {
-  background: #CD5120;
+  background: #cd5120;
 }
 main .container .planet-details-container .planet-details .info-states-container .info-states .uranus.active {
   background: #1ec2a4;
@@ -272,22 +297,22 @@ main .container .planet-info-container .info-item .info-value {
     cursor: pointer;
   }
   main .container .info-states-container-mobile .info-states .mercury.active {
-    border-bottom: 3px solid #419EBB;
+    border-bottom: 3px solid #419ebb;
   }
   main .container .info-states-container-mobile .info-states .venus.active {
-    border-bottom: 3px solid #EDA249;
+    border-bottom: 3px solid #eda249;
   }
   main .container .info-states-container-mobile .info-states .earth.active {
     border-bottom: 3px solid #6f2ed6;
   }
   main .container .info-states-container-mobile .info-states .mars.active {
-    border-bottom: 3px solid #D14C32;
+    border-bottom: 3px solid #d14c32;
   }
   main .container .info-states-container-mobile .info-states .jupiter.active {
-    border-bottom: 3px solid #D83A34;
+    border-bottom: 3px solid #d83a34;
   }
   main .container .info-states-container-mobile .info-states .saturn.active {
-    border-bottom: 3px solid #CD5120;
+    border-bottom: 3px solid #cd5120;
   }
   main .container .info-states-container-mobile .info-states .uranus.active {
     border-bottom: 3px solid #1ec2a4;

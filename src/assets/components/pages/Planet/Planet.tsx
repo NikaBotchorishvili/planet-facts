@@ -26,6 +26,17 @@ export const planetLoader = ({ params }: any) => {
 	return planetData;
 };
 
+export const defaultPlanetLoader = () => {
+	let planetData = fetch("/data.json")
+		.then((res) => res.json())
+		.then((jsonData: Planet[]) =>
+			jsonData.find((planet) => planet.name.toLowerCase() == "mercury")
+		)
+		.catch((error) => console.log(error));
+
+	return planetData;
+};
+
 function Planet() {
 	const planetData: Planet = useLoaderData();
 	const loc = useLocation();

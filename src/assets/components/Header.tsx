@@ -9,30 +9,54 @@ function Header() {
 					</div>
 					<nav className="navigation">
 						<ul className="nav-links">
-							<li className="nav-item">
-								<Link to={"mercury/overview/"}>Mercury</Link>
-							</li>
-							<li className="nav-item">
-								<Link to={"venus/overview/"}>Venus</Link>
-							</li>
-							<li className="nav-item">
-								<Link to={"earth/overview/"}>Earth</Link>
-							</li>
-							<li className="nav-item">
-								<Link to={"mars/overview/"}>Mars</Link>
-							</li>
-							<li className="nav-item">
-								<Link to={"jupiter/overview/"}>Jupiter</Link>
-							</li>
-							<li className="nav-item">
-								<Link to={"saturn/overview/"}>Saturn</Link>
-							</li>
-							<li className="nav-item">
-								<Link to={"uranus/overview/"}>Uranus</Link>
-							</li>
-							<li className="nav-item">
-								<Link to={"neptune/overview/"}>Neptune</Link>
-							</li>
+							<Link
+								className="nav-item mercury"
+								to={"/mercury/overview/"}
+							>
+								Mercury
+							</Link>
+							<Link
+								className="nav-item venus"
+								to={"/venus/overview/"}
+							>
+								Venus
+							</Link>
+							<Link
+								className="nav-item earth"
+								to={"/earth/overview/"}
+							>
+								Earth
+							</Link>
+							<Link
+								className="nav-item mars"
+								to={"/mars/overview/"}
+							>
+								Mars
+							</Link>
+							<Link
+								className="nav-item jupiter"
+								to={"jupiter/overview/"}
+							>
+								Jupiter
+							</Link>
+							<Link
+								className="nav-item saturn"
+								to={"saturn/overview/"}
+							>
+								Saturn
+							</Link>
+							<Link
+								className="nav-item uranus"
+								to={"uranus/overview/"}
+							>
+								Uranus
+							</Link>
+							<Link
+								className="nav-item neptune"
+								to={"neptune/overview/"}
+							>
+								Neptune
+							</Link>
 						</ul>
 					</nav>
 					<div className="menu-icon-container">
