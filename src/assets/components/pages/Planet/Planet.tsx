@@ -32,25 +32,81 @@ function Planet() {
 	let info_type = loc.pathname.split("/")[2];
 
 	let imageSection;
-
+	let aboutSection;
 	if (info_type == "overview") {
 		imageSection = (
 			<div className="planet-image">
 				<img className="image" src={planetData.images.planet} alt="" />
 			</div>
 		);
+		aboutSection = (
+			<>
+				<p className="about">{planetData.overview.content}</p>
+
+				<small className="planet-source">
+					Source:{" "}
+					<a href={planetData.overview.source} target="_blank">
+						Wikipedia{" "}
+						<img
+							src="/images/icon-source.svg"
+							alt="icon-source-image"
+						/>
+					</a>
+				</small>
+			</>
+		);
 	} else if (info_type == "internal") {
 		imageSection = (
 			<div className="planet-image">
-				<img className="image" src={planetData.images.internal} alt="" />
+				<img
+					className="image"
+					src={planetData.images.internal}
+					alt=""
+				/>
 			</div>
+		);
+		aboutSection = (
+			<>
+				<p className="about">{planetData.structure.content}</p>
+
+				<small className="planet-source">
+					Source:{" "}
+					<a href={planetData.structure.source} target="_blank">
+						Wikipedia{" "}
+						<img
+							src="/images/icon-source.svg"
+							alt="icon-source-image"
+						/>
+					</a>
+				</small>
+			</>
 		);
 	} else if (info_type == "surface") {
 		imageSection = (
 			<div className="planet-image geology-image-container ">
 				<img className="image" src={planetData.images.planet} alt="" />
-				<img className="geology-image" src={planetData.images.geology} alt="" />
+				<img
+					className="geology-image"
+					src={planetData.images.geology}
+					alt=""
+				/>
 			</div>
+		);
+		aboutSection = (
+			<>
+				<p className="about">{planetData.geology.content}</p>
+
+				<small className="planet-source">
+					Source:{" "}
+					<a href={planetData.geology.source} target="_blank">
+						Wikipedia{" "}
+						<img
+							src="/images/icon-source.svg"
+							alt="icon-source-image"
+						/>
+					</a>
+				</small>
+			</>
 		);
 	}
 
@@ -78,26 +134,7 @@ function Planet() {
 					<div className="planet-details">
 						<div className="planet-about-container">
 							<h1 className="planet-name">{planetData.name}</h1>
-
-							<div className="planet-about">
-								<p className="about">
-									{planetData.overview.content}
-								</p>
-
-								<small className="planet-source">
-									Source:{" "}
-									<a
-										href={planetData.overview.source}
-										target="_blank"
-									>
-										Wikipedia{" "}
-										<img
-											src="/images/icon-source.svg"
-											alt=""
-										/>
-									</a>
-								</small>
-							</div>
+							<div className="planet-about">{aboutSection}</div>
 						</div>
 
 						<div className="info-states-container">
