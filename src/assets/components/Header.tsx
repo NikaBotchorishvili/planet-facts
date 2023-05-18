@@ -8,6 +8,13 @@ function Header() {
 						<h1>THE PLANETS</h1>
 					</div>
 					<nav className="navigation">
+						<div className="menu-icon-container">
+							<img
+								className="menu-icon"
+								src="/images/icon-hamburger.svg"
+								alt=""
+							/>
+						</div>
 						<ul className="nav-links">
 							<Link
 								className="nav-item mercury"
@@ -59,13 +66,6 @@ function Header() {
 							</Link>
 						</ul>
 					</nav>
-					<div className="menu-icon-container">
-						<img
-							className="menu-icon"
-							src="/images/icon-hamburger.svg"
-							alt=""
-						/>
-					</div>
 				</div>
 			</header>
 			<Outlet />

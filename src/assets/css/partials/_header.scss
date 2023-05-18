@@ -59,18 +59,20 @@ header {
 	header {
 		.header-container {
 			flex-direction: row;
+			justify-content: space-between;
 			.header {
 				h1 {
 					width: max-content;
 				}
 			}
 			.navigation {
+				width: unset;
 				.nav-links {
 					display: none;
 				}
-			}
-			.menu-icon-container {
-				display: block;
+				.menu-icon-container {
+					display: block;
+				}
 			}
 		}
 	}

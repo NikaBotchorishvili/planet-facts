@@ -229,6 +229,8 @@ main {
 						font-size: 1em;
 						font-family: $fontSpartan;
 						cursor: pointer;
+						text-decoration: none;
+						color: $white;
 					}
 					.mercury.active{
 						@include planetBorder($mercury)

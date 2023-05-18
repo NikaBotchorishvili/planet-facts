@@ -70,15 +70,19 @@ header .menu-icon-container {
 @media only screen and (max-width: 520px) {
   header .header-container {
     flex-direction: row;
+    justify-content: space-between;
   }
   header .header-container .header h1 {
     width: -moz-max-content;
     width: max-content;
   }
+  header .header-container .navigation {
+    width: unset;
+  }
   header .header-container .navigation .nav-links {
     display: none;
   }
-  header .header-container .menu-icon-container {
+  header .header-container .navigation .menu-icon-container {
     display: block;
   }
 }
@@ -295,6 +299,8 @@ main .container .planet-info-container .info-item .info-value {
     font-size: 1em;
     font-family: "League Spartan", sans-serif;
     cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
   }
   main .container .info-states-container-mobile .info-states .mercury.active {
     border-bottom: 3px solid #419ebb;

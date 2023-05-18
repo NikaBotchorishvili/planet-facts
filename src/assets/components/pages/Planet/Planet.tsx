@@ -1,4 +1,12 @@
-import { useLoaderData, NavLink, useLocation, redirect } from "react-router-dom";
+import {
+	useLoaderData,
+	NavLink,
+	useLocation,
+	redirect,
+} from "react-router-dom";
+import InfoStates from "./components/InfoStates";
+import PlanetInfo from "./components/PlanetInfo";
+import PlanetAbout from "./components/PlanetAbout";
 export interface Planet {
 	name: string;
 	className: string;
@@ -12,9 +20,8 @@ export interface Planet {
 	images: { planet: string; internal: string; geology: string };
 }
 export const planetLoader = ({ params }: any) => {
-	if(params.planet_name){
-		redirect("/mercury/overview/")
-
+	if (params.planet_name) {
+		redirect("/mercury/overview/");
 	}
 	let planetData = fetch("/data.json")
 		.then((res) => res.json())
@@ -128,76 +135,26 @@ function Planet() {
 	return (
 		<main>
 			<div className="container">
-				<div className="info-states-container-mobile">
-					<ul className="info-states">
-						<li className="info-state-item mercury active">
-							<div className="">OVERVIEW</div>
-						</li>
-						<li
-							className={`info-state-item ${planetData.className}`}
-						>
-							<div>STRUCTURE</div>
-						</li>
-						<li className="info-state-item mercury">
-							<div>SURFACE</div>
-						</li>
-					</ul>
-				</div>
-				<section className="planet-details-container">
-					{imageSection}
+				<InfoStates
+					className={planetData.className}
+					planetName={planetData.name}
+					resClassName="info-states-container-mobile"
+				/>
+				{(imageSection && aboutSection) && (
+					<PlanetAbout 
+						name={planetData.name}
+						className={planetData.className}
+						aboutSection={aboutSection}
+						imageSection={imageSection}
+					/>
 
-					<div className="planet-details">
-						<div className="planet-about-container">
-							<h1 className="planet-name">{planetData.name}</h1>
-							<div className="planet-about">{aboutSection}</div>
-						</div>
-
-						<div className="info-states-container">
-							<ul className="info-states">
-								<NavLink
-									to={`/${planetData.name.toLowerCase()}/overview/`}
-									className={`info-state-item ${planetData.className}`}
-								>
-									<div>01</div>
-									<div>OVERVIEW</div>
-								</NavLink>
-								<NavLink
-									to={`/${planetData.name.toLowerCase()}/internal/`}
-									className={`info-state-item ${planetData.className}`}
-								>
-									<div>02</div>
-									<div>INTERNAL STRUCTURE</div>
-								</NavLink>
-								<NavLink
-									to={`/${planetData.name.toLowerCase()}/surface/`}
-									className={`info-state-item ${planetData.className}`}
-								>
-									<div>03</div>
-									<div>SURFACE GEOLOGY</div>
-								</NavLink>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-				<section className="planet-info-container">
-					<div className="info-item">
-						<span className="info-name">ROTATION TIME</span>
-						<h2 className="info-value">{planetData.rotation}</h2>
-					</div>
-					<div className="info-item">
-						<span className="info-name">REVOLUTION TIME</span>
-						<h2 className="info-value">{planetData.revolution}</h2>
-					</div>
-					<div className="info-item">
-						<span className="info-name">RADIUS</span>
-						<h2 className="info-value">{planetData.radius}</h2>
-					</div>
-					<div className="info-item">
-						<span className="info-name">AVERAGE TEMP.</span>
-						<h2 className="info-value">{planetData.temperature}</h2>
-					</div>
-				</section>
+				)}
+				<PlanetInfo
+					rotation={planetData.rotation}
+					temperature={planetData.temperature}
+					radius={planetData.radius}
+					revolution={planetData.revolution}
+				/>
 			</div>
 		</main>
 	);
