@@ -26,15 +26,15 @@ Users should be able to:
 
 ### Screenshot
 
-![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/14031e2c-e980-4967-bb90-8e23c12850c1)
-![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/ec143455-e1c3-43d2-9827-e889a7a744bf)
-![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/c09fea2e-788c-4101-a2f9-65b2c1d4ab54)
-![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/c145937d-9f61-4f01-9c52-32e5673b4356)
-![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/d75ff053-5428-486c-8883-c72ada70fbb0)
-![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/25433a47-a38e-4faf-9fcd-568770efccf1)
-![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/70dfd097-92cb-41fd-a88b-6ca39f3254b1)
-![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/b18b480f-5437-4e58-93b2-c9739e8edbb0)
-![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/a02755f6-88a8-4a4d-80fe-1b3279042be8)
+![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/a6c32771-a86c-4342-a9a2-374844a4ffb0)
+![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/d42a284a-1ff8-437a-a207-f7627d9ae850)
+![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/1eedccc8-90ab-4139-b6fd-02b81f8e70b9)
+![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/87170216-04d3-44ea-ac7e-ad51ff7c25bc)
+![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/b5f5c7d4-0fbd-476e-9e89-8dcc2e4d14c9)
+![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/87805aca-8c54-4876-9c5d-8c05f03ea9e1)
+![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/9aa0d092-7fca-4e44-b3a3-329d6f389635)
+![image](https://github.com/NikaBotchorishvili/planet-facts/assets/58900787/32043cb4-3f17-4453-91f2-3718d2ff3cc4)
+
 
 ### Links
 
