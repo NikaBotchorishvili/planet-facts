@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import MobileNav from "./components/MobileNav";
 import DefaultNav from "./components/DefaultNav";
+import ParticleBackground from "../../ParticleBackground";
 function Header() {
 	const [toggled, setToggled] = useState(false);
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -15,6 +16,7 @@ function Header() {
 
 	return (
 		<>
+			<ParticleBackground/>
 			<header>
 				<div className="header-container">
 					<div className="header">

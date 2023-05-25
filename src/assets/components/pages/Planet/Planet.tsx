@@ -1,11 +1,10 @@
-import {
-	useLoaderData,
-	useLocation,
-	redirect,
-} from "react-router-dom";
+import { useLoaderData, useLocation, redirect } from "react-router-dom";
 import InfoStates from "./components/InfoStates";
 import PlanetInfo from "./components/PlanetInfo";
 import PlanetAbout from "./components/PlanetAbout";
+import anime from "animejs";
+import { useEffect } from "react";
+
 export interface Planet {
 	name: string;
 	className: string;
@@ -51,9 +50,21 @@ function Planet() {
 	const planetData = useLoaderData() as Planet;
 	const loc = useLocation();
 	let info_type = loc.pathname.split("/")[2];
-
 	let imageSection;
 	let aboutSection;
+
+	useEffect(() => {
+		anime({
+			targets: ".planet-image",
+			translateY: 20,
+			direction: "alternate",
+			endDelay: 0,
+			delay: 0,
+			easing: "linear",
+			loop: true,
+			duration: 2000,
+		});
+	}, []);
 	if (info_type == "overview") {
 		imageSection = (
 			<div className="planet-image">
@@ -139,14 +150,13 @@ function Planet() {
 					planetName={planetData.name}
 					resClassName="info-states-container-mobile"
 				/>
-				{(imageSection && aboutSection) && (
-					<PlanetAbout 
+				{imageSection && aboutSection && (
+					<PlanetAbout
 						name={planetData.name}
 						className={planetData.className}
 						aboutSection={aboutSection}
 						imageSection={imageSection}
 					/>
-
 				)}
 				<PlanetInfo
 					rotation={planetData.rotation}
