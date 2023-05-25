@@ -1,6 +1,5 @@
 import {
 	useLoaderData,
-	NavLink,
 	useLocation,
 	redirect,
 } from "react-router-dom";
