@@ -13,7 +13,7 @@ This is a solution to the [Planets fact site challenge on Frontend Mentor](https
   - [What I learned](#what-i-learned)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-- 
+
 ## Overview
 
 ### The challenge
