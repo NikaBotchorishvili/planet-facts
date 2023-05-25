@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {  Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import MobileNav from "./components/MobileNav";
 import DefaultNav from "./components/DefaultNav";
 function Header() {
@@ -32,12 +32,10 @@ function Header() {
 					</div>
 					<nav className="navigation">
 						{screenWidth <= 520 && toggled && (
-							<MobileNav handleToggle={() => handleToggle()}/>
+							<MobileNav handleToggle={() => handleToggle()} />
 						)}
+						{screenWidth > 520 && <DefaultNav />}
 					</nav>
-					{screenWidth > 520 && (
-						<DefaultNav />
-					)}
 				</div>
 			</header>
 			<Outlet />
