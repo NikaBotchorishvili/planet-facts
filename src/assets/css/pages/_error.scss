@@ -1,0 +1,22 @@
+@use "../abstracts/" as *;
+
+
+.error{
+    color: $white;
+    font-family: $fontAntonio;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    gap: 20px;
+    p{
+        font-family: $fontSpartan;
+    }
+    .back-element{
+        a{
+            color: $earth;
+        }
+    }
+}

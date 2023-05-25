@@ -1,6 +1,7 @@
 @forward "./abstracts/index.scss";
 @use "./partials/header";
 @use "./pages/planet.scss";
+@use "./pages/error.scss";
 *{
     margin: 0;
     padding: 0;

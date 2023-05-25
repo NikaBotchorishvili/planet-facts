@@ -195,6 +195,7 @@ main .container .planet-details-container .planet-image .image {
 }
 main .container .planet-details-container .geology-image-container {
   position: relative;
+  z-index: -1;
 }
 main .container .planet-details-container .geology-image-container .geology-image {
   position: absolute;
@@ -453,6 +454,24 @@ main .container .planet-info-container .info-item .info-value {
     font-family: "Antonio", sans-serif;
   }
 }
+.error {
+  color: #ffffff;
+  font-family: "Antonio", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  gap: 20px;
+}
+.error p {
+  font-family: "League Spartan", sans-serif;
+}
+.error .back-element a {
+  color: #6f2ed6;
+}
+
 * {
   margin: 0;
   padding: 0;

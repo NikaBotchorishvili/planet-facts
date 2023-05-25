@@ -1,10 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import Header from "./assets/components/Header";
 import Planet, {
 	planetLoader,
 } from "./assets/components/pages/Planet/Planet";
 import Redirect from "./assets/components/pages/Redirect";
+import Header from "./assets/components/partials/Header/Header";
+import ErrorBoundary from "./assets/components/pages/Error/ErrorBoundary";
+
 function App() {
 
 
@@ -12,6 +13,7 @@ function App() {
 		{
 			path: "/",
 			element: <Redirect />,
+			errorElement: <ErrorBoundary />
 			
 		},
 		{
@@ -22,6 +24,7 @@ function App() {
 			</>,
 			path: "/:planet_name/:info_type/",
 			loader: planetLoader,
+			errorElement: <ErrorBoundary />
 		},
 	]);
 	return <RouterProvider router={router} />;

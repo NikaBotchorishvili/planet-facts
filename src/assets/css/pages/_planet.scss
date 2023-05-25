@@ -29,6 +29,7 @@ main {
 			}
 			.geology-image-container{
 				position: relative;
+				z-index: -1;
 				.geology-image{
 					position: absolute;
 					bottom: -10%;
