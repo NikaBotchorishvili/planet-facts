@@ -1,6 +1,14 @@
 import { NavLink } from "react-router-dom";
 
-function InfoStates({resClassName, planetName, className}: { resClassName: string, planetName: string, className: string }) {
+function InfoStates({
+	resClassName,
+	planetName,
+	className,
+}: {
+	resClassName: string;
+	planetName: string;
+	className: string;
+}) {
 	return (
 		<div className={resClassName}>
 			<ul className="info-states">

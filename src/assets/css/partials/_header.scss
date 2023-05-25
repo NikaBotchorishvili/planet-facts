@@ -20,6 +20,7 @@ header {
 		}
 		.navigation {
 			width: 500px;
+
 			.nav-links {
 				list-style: none;
 				display: flex;
@@ -32,12 +33,12 @@ header {
 					text-decoration: none;
 					height: 100%;
 				}
-			
+
 				@each $planet, $color in $planets {
 					.#{$planet}:hover {
 						border-bottom: 1px solid #{$color};
 					}
-				  }
+				}
 			}
 		}
 	}
@@ -59,19 +60,59 @@ header {
 	header {
 		.header-container {
 			flex-direction: row;
+			align-items: center;
 			justify-content: space-between;
+			position: sticky;
+			top: 0;
 			.header {
 				h1 {
 					width: max-content;
 				}
 			}
-			.navigation {
-				width: unset;
-				.nav-links {
-					display: none;
+			.menu-icon-container {
+				display: block;
+				width: min-content;
+				float: right;
+				position: absolute;
+				right: 20px;
+				.menu-icon {
+					float: right;
 				}
-				.menu-icon-container {
-					display: block;
+			}
+			.navigation {
+				align-items: center;
+				width: min-content;
+				.nav-links {
+					flex-direction: column;
+					position: fixed;
+					width: 100%;
+					background-color: #070724;
+					left: 0;
+					bottom: 0;
+					height: calc(100% - 81px);
+					.nav-item {
+						display: flex;
+						justify-content: space-between;
+						padding: 0 30px;
+						align-items: center;
+						.nav-item-info{
+							display: flex;
+							gap: 20px;
+							align-items: center;
+						}
+						img{
+							height: 20px;
+						}
+					}
+					@each $planet, $color in $planets {
+						.#{$planet} > .nav-item-info> .circle {
+
+							width: 25px;
+							height: 25px;
+							background: $color;
+							border-radius: 100%;
+						}
+					}
 				}
 			}
 		}

@@ -70,20 +70,101 @@ header .menu-icon-container {
 @media only screen and (max-width: 520px) {
   header .header-container {
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
   }
   header .header-container .header h1 {
     width: -moz-max-content;
     width: max-content;
   }
+  header .header-container .menu-icon-container {
+    display: block;
+    width: -moz-min-content;
+    width: min-content;
+    float: right;
+    position: absolute;
+    right: 20px;
+  }
+  header .header-container .menu-icon-container .menu-icon {
+    float: right;
+  }
   header .header-container .navigation {
-    width: unset;
+    align-items: center;
+    width: -moz-min-content;
+    width: min-content;
   }
   header .header-container .navigation .nav-links {
-    display: none;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    background-color: #070724;
+    left: 0;
+    bottom: 0;
+    height: calc(100% - 81px);
   }
-  header .header-container .navigation .menu-icon-container {
-    display: block;
+  header .header-container .navigation .nav-links .nav-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;
+  }
+  header .header-container .navigation .nav-links .nav-item .nav-item-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  header .header-container .navigation .nav-links .nav-item img {
+    height: 20px;
+  }
+  header .header-container .navigation .nav-links .mercury > .nav-item-info > .circle {
+    width: 25px;
+    height: 25px;
+    background: #419ebb;
+    border-radius: 100%;
+  }
+  header .header-container .navigation .nav-links .venus > .nav-item-info > .circle {
+    width: 25px;
+    height: 25px;
+    background: #eda249;
+    border-radius: 100%;
+  }
+  header .header-container .navigation .nav-links .earth > .nav-item-info > .circle {
+    width: 25px;
+    height: 25px;
+    background: #6f2ed6;
+    border-radius: 100%;
+  }
+  header .header-container .navigation .nav-links .mars > .nav-item-info > .circle {
+    width: 25px;
+    height: 25px;
+    background: #d14c32;
+    border-radius: 100%;
+  }
+  header .header-container .navigation .nav-links .jupiter > .nav-item-info > .circle {
+    width: 25px;
+    height: 25px;
+    background: #d83a34;
+    border-radius: 100%;
+  }
+  header .header-container .navigation .nav-links .saturn > .nav-item-info > .circle {
+    width: 25px;
+    height: 25px;
+    background: #cd5120;
+    border-radius: 100%;
+  }
+  header .header-container .navigation .nav-links .uranus > .nav-item-info > .circle {
+    width: 25px;
+    height: 25px;
+    background: #1ec2a4;
+    border-radius: 100%;
+  }
+  header .header-container .navigation .nav-links .neptune > .nav-item-info > .circle {
+    width: 25px;
+    height: 25px;
+    background: #2d68f0;
+    border-radius: 100%;
   }
 }
 main {
