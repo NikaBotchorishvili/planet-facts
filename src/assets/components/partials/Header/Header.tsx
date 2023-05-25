@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
-import { RemoveScroll } from "react-remove-scroll";
+import {  Outlet } from "react-router-dom";
 import MobileNav from "./components/MobileNav";
 import DefaultNav from "./components/DefaultNav";
 function Header() {
