@@ -3,7 +3,7 @@ header {
   color: #ffffff;
   font-family: "Antonio", sans-serif;
   width: 100%;
-  border: 1px solid #38384f;
+  border-bottom: 1px solid #38384f;
   box-sizing: border-box;
   padding-bottom: 20px;
 }
