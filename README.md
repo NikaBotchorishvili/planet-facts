@@ -62,7 +62,6 @@ In this project I learned how to use React Router and got a little comfortable w
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@NikaBotchorishvili]([https://www.frontendmentor.io/profile/yourusername](https://www.frontendmentor.io/profile/NikaBotchorishvili))
 - LinkeIn - [@Nika Botchorishvili](https://www.linkedin.com/in/nika-botchorishvili-a27b09234/)
 
